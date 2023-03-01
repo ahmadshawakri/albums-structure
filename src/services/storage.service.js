@@ -1,14 +1,13 @@
-import moment from 'moment';
+import moment from "moment";
 
-const AUTH_KEY = 'at-auth';
+const AUTH_KEY = "at-auth";
 const TTL = 1;
 
 export const StorageService = {
-  setAuthKey: value => {
+  setAuthKey: (value) => {
     if (value === undefined) localStorage.removeItem(AUTH_KEY);
     else {
-      const expiry = moment().add(TTL, 'd');
-      console.log(expiry);
+      const expiry = moment().add(TTL, "m");
       localStorage.setItem(AUTH_KEY, JSON.stringify({ value, expiry }));
     }
     return true;

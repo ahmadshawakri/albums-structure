@@ -11,7 +11,6 @@ const Login = () => {
 
   const checkEmailHandler = async (event) => {
     event.preventDefault();
-    console.log(emailRef);
 
     try {
       const verifiedUser = await login(emailRef.current.value);
@@ -19,7 +18,6 @@ const Login = () => {
       if (!verifiedUser) {
         setError("Invalid Credentials!");
       } else {
-        console.log(verifiedUser);
         navigate("/albums/");
       }
     } catch (error) {
